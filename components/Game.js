@@ -29,6 +29,7 @@ export default class Game extends React.Component {
       return false;
     }
     ev.preventDefault();
+
     this.state.board[i] = this.state.turn
 
     this.setState({

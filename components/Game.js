@@ -58,7 +58,7 @@ export default class Game extends React.Component {
     if (this.isComplete() && this.state.board.includes(null)) {
       status = <Status winner = {this.getWinner()}/>;
     }
-    else {
+    else if (!this.isComplete()) {
       status = <Status />;
     }
     return (

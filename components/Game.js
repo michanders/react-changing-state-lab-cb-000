@@ -36,8 +36,7 @@ export default class Game extends React.Component {
   }
 
   getWinner () {
-    const winningCombo = this.checkWinner();
-    return this.state.board[winningCombo];
+    return this.state.board[this.checkWinner()];
   }
 
   checkWinner() {
@@ -47,7 +46,7 @@ export default class Game extends React.Component {
       return board[solutions[i][0]] && board[solutions[i][0]] === board[solutions[i][1]] && board[solutions[i][1]] === board[solutions[i][2]] ? i : false;
     }
   }
-  
+
   isComplete () {
     if (!this.state.board.includes(null)) {
       return true

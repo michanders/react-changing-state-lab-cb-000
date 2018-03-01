@@ -48,7 +48,7 @@ export default class Game extends React.Component {
   }
 
   isComplete () {
-    if (this.isDraw) {
+    if (!this.state.board.includes(null)) {
       return true
     } else if (this.checkWinner() || this.checkWinner() === 0) {
       return true
@@ -56,13 +56,10 @@ export default class Game extends React.Component {
     return false
   }
 
-  isDraw(){
-    !this.state.board.includes(null) ? true: false;
-  }
 
   render () {
     let status = null;
-    if (this.isComplete() && !this.isDraw()) {
+    if (this.isComplete()) {
       status = <Status winner={this.getWinner()}/>;
     } else if (this.isComplete()) {
       status = <Status />;

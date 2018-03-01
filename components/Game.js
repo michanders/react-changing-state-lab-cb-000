@@ -36,8 +36,7 @@ export default class Game extends React.Component {
   }
 
   getWinner () {
-    const winningCombo = this.checkWinner();
-    return this.state.board[winningCombo];
+    return this.state.board[this.checkWinner];
   }
 
   checkWinner() {

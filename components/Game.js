@@ -62,7 +62,7 @@ export default class Game extends React.Component {
 
   render () {
     let status = null;
-    if (this.isComplete() && !this.isDraw) {
+    if (this.isComplete() && !this.isDraw()) {
       status = <Status winner={this.getWinner()}/>;
     } else if (this.isComplete()) {
       status = <Status />;

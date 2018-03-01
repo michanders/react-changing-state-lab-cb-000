@@ -35,25 +35,30 @@ export default class Game extends React.Component {
     });
   }
 
-  getWinner() {
+  getWinner () {
+    const winningCombo = this.checkWinner();
+    return this.state.board[winningCombo];
+  }
+
+  checkWinner() {
     const board = this.state.board;
 
     for (let i=0; i < solutions.length; i++) {
-      var win = board[solutions[i][0]] && board[solutions[i][0]] === board[solutions[i][1]] && board[solutions[i][1]] === board[solutions[i][2]] ? i : false;
+      return board[solutions[i][0]] && board[solutions[i][0]] === board[solutions[i][1]] && board[solutions[i][1]] === board[solutions[i][2]] ? i : false;
     }
-    return this.state.board[win];
+  }
+
+  checkDraw() {
+    return !this.state.board.includes(null);
   }
 
   isComplete () {
-    if (!this.state.board.includes(null)) {
+    if (this.checkDraw()) {
+      return true
+    } else if (this.checkWinner() || this.checkWinner() === 0) {
       return true
     }
-    else if (this.checkWinner() || this.checkWinner() === 0) {
-      return true
-    }
-    else {
-      return false
-    }
+    return false
   }
 
   render () {

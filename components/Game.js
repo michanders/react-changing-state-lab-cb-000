@@ -46,7 +46,8 @@ export default class Game extends React.Component {
   isComplete () {
     if (!this.state.board.includes(null)) {
       return true
-    } else if (this.findWinner() || this.findWinner() === 0) {
+    } 
+    else if (this.getWinner !== false) {
       return true
     }
     return false

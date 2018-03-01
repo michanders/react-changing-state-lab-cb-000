@@ -57,16 +57,16 @@ export default class Game extends React.Component {
   }
 
   isDraw(){
-     return this.state.board.includes(null) ? true: false;
+    this.state.board.includes(null) ? true: false;
   }
 
   render () {
-      let status = null;
-      if (this.isComplete()) {
-        status = <Status winner={this.getWinner()}/>;
-      } else if (this.isComplete()) {
-        status = <Status />;
-      }
+    let status = null;
+    if (this.isComplete()) {
+      status = <Status winner={this.getWinner()}/>;
+    } else if (this.isComplete()) {
+      status = <Status />;
+    }
     return (
       <div className='game'>
         <Board board={this.state.board} onClick={this.handleClick} />

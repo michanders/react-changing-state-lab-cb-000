@@ -54,10 +54,12 @@ export default class Game extends React.Component {
   isComplete () {
     if (!this.state.board.includes(null)) {
       return true
-    } else if (this.checkWinner() || this.checkWinner() === 0) {
+    } 
+    else if (this.checkWinner() || this.checkWinner() === 0) {
       return true
     }
-    return false
+    else {
+      return false
   }
 
   render () {

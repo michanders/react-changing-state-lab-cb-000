@@ -36,8 +36,7 @@ export default class Game extends React.Component {
 
 
   getWinner() {
-    const board = this.state.board;
-
+    var board = this.state.board;
     for (let i=0; i < solutions.length; i++) {
       return board[solutions[i][0]] && board[solutions[i][0]] === board[solutions[i][1]] && board[solutions[i][1]] === board[solutions[i][2]] ? board[i] : false;
     }

@@ -7,7 +7,7 @@ export default class Game extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      board: [null, null, null, null, null, null, null, null, null]
+      board: [null, null, null, null, null, null, null, null, null],
       turn: 'X'
     };
 
@@ -18,7 +18,7 @@ export default class Game extends React.Component {
   handleReset (ev) {
     ev.preventDefault();
     this.setState({
-      board: [null, null, null, null, null, null, null, null, null]
+      board: [null, null, null, null, null, null, null, null, null],
       turn: 'X'
     })
   }

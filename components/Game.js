@@ -35,11 +35,7 @@ export default class Game extends React.Component {
     });
   }
 
-  getWinner () {
-    return this.state.board[this.checkWinner];
-  }
-
-  checkWinner() {
+  getWinner() {
     const board = this.state.board;
 
     for (let i=0; i < solutions.length; i++) {

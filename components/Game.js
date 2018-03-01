@@ -29,7 +29,7 @@ export default class Game extends React.Component {
     this.state.board[i] = this.state.turn;
 
     this.setState({
-      board: this.state.board;
+      board: this.state.board,
       turn: this.state.turn === 'X' ? 'O' : 'X'
     });
   }

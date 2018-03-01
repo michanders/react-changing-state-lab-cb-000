@@ -26,10 +26,11 @@ export default class Game extends React.Component {
   handleClick (i, ev) {
     if(this.isComplete()) return false;
     ev.preventDefault();
-    this.state.board[i] = this.state.turn;
+    const newBoard = this.state.board;
+    newBoard[i] = this.state.turn
 
     this.setState({
-      board: this.state.board,
+      board: newBoard,
       turn: this.state.turn === 'X' ? 'O' : 'X'
     });
   }
@@ -46,7 +47,7 @@ export default class Game extends React.Component {
   isComplete () {
     if (!this.state.board.includes(null)) {
       return true
-    } 
+    }
     else if (this.getWinner !== false) {
       return true
     }

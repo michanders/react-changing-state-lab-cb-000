@@ -56,7 +56,6 @@ export default class Game extends React.Component {
     return false
   }
 
-
   render () {
     let status = null;
     if (this.isComplete()) {

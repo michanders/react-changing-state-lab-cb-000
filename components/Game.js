@@ -16,6 +16,11 @@ export default class Game extends React.Component {
   }
 
   handleReset (ev) {
+    ev.preventDefault();
+    this.setState({
+      board: [null, 'x', null, null, null, null, null, null, null]
+      turn: 'x'
+    })
   }
 
   handleClick (i, ev) {

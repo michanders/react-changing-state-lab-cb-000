@@ -41,7 +41,7 @@ export default class Game extends React.Component {
     for (let i=0; i < solutions.length; i++) {
       var win = board[solutions[i][0]] && board[solutions[i][0]] === board[solutions[i][1]] && board[solutions[i][1]] === board[solutions[i][2]] ? i : false;
     }
-    
+    return board[win];
   }
 
   isComplete () {

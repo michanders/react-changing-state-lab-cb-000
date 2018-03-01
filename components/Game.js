@@ -26,11 +26,10 @@ export default class Game extends React.Component {
   handleClick (i, ev) {
     if(this.isComplete()) return false;
     ev.preventDefault();
-    const newBoard = this.state.board;
-    newBoard[i] = this.state.turn
+    this.state.board[i] = this.state.turn
 
     this.setState({
-      board: newBoard,
+      board: this.state.board,
       turn: this.state.turn === 'X' ? 'O' : 'X'
     });
   }

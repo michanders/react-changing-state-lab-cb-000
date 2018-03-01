@@ -8,6 +8,7 @@ export default class Game extends React.Component {
     super(props);
     this.state = {
       board: [null, 'x', null, null, null, null, null, null, null]
+      turn: 'x'
     };
 
     this.handleReset = this.handleReset.bind(this);

@@ -48,7 +48,7 @@ export default class Game extends React.Component {
     if (!this.state.board.includes(null)) {
       return true
     }
-    else if (this.getWinner !== false) {
+    else if (this.getWinner === "X" || this.getWinner === "O") {
       return true
     }
     return false

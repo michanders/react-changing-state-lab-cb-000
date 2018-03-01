@@ -56,6 +56,10 @@ export default class Game extends React.Component {
     return false
   }
 
+  isDraw(){
+     this.state.board.includes(null) ? true: false;
+  }
+
   render () {
       let status = null;
       if (this.isComplete()) {

@@ -34,16 +34,14 @@ export default class Game extends React.Component {
     });
   }
 
-  getWinner () {
-    return this.state.board[this.findWinner()];
-  }
 
-  findWinner() {
+  getWinner() {
     const board = this.state.board;
 
     for (let i=0; i < solutions.length; i++) {
-      return board[solutions[i][0]] && board[solutions[i][0]] === board[solutions[i][1]] && board[solutions[i][1]] === board[solutions[i][2]] ? i : false;
+      var win = board[solutions[i][0]] && board[solutions[i][0]] === board[solutions[i][1]] && board[solutions[i][1]] === board[solutions[i][2]] ? i : false;
     }
+    
   }
 
   isComplete () {
@@ -58,7 +56,7 @@ export default class Game extends React.Component {
   render () {
     let status = null;
     if (this.isComplete() && this.state.board.includes(null)) {
-      status = <Status winner={this.getWinner()}/>;
+      status = <Status winner = {this.getWinner()}/>;
     }
     else if (this.isComplete()) {
       status = <Status />;

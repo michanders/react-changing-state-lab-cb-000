@@ -35,10 +35,10 @@ export default class Game extends React.Component {
   }
 
   getWinner () {
-    return this.state.board[this.checkWinner()];
+    return this.state.board[this.findWinner()];
   }
 
-  checkWinner() {
+  findWinner() {
     const board = this.state.board;
 
     for (let i=0; i < solutions.length; i++) {
@@ -49,7 +49,7 @@ export default class Game extends React.Component {
   isComplete () {
     if (!this.state.board.includes(null)) {
       return true
-    } else if (this.checkWinner() || this.checkWinner() === 0) {
+    } else if (this.findWinner() || this.findWinner() === 0) {
       return true
     }
     return false

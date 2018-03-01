@@ -25,7 +25,9 @@ export default class Game extends React.Component {
 
 
   handleClick (i, ev) {
-    if(this.isComplete()) return false;
+    if(this.isComplete()) {
+      return false;
+    }
     ev.preventDefault();
     this.state.board[i] = this.state.turn
 

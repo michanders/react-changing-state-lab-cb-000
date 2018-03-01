@@ -24,12 +24,22 @@ export default class Game extends React.Component {
   }
 
   handleClick (i, ev) {
+    ev.preventDefault();
+
+    this.setState({
+      board: this.state.board,
+      turn: this.state.turn === 'X' ? 'O' : 'X'
+    });
   }
 
   getWinner () {
+    
   }
 
   isComplete () {
+    if(!this.state.board.includes(null)){
+      return true
+    }
   }
 
   render () {

@@ -49,6 +49,9 @@ export default class Game extends React.Component {
     else if (this.checkWinner() || this.checkWinner() < 1) {
       return true
     }
+    else {
+      return false
+    }
   }
 
   render () {
